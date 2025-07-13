@@ -1,0 +1,515 @@
+/* ===== FONT IMPORT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* ===== GLOBAL RESET ===== */
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+}
+
+h1, h2, h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 60px;
+  color: #70baff;
+}
+
+.h5 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 60px;
+  color: #000;
+}
+
+.h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 1000;
+  font-size: 75px;
+  color: #212529;
+  margin-bottom: 1rem;
+}
+
+.p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== NAVBAR STYLES ===== */
+.navbar-custom {
+  background: linear-gradient(90deg, #f8f9fa 0%, #ffffff 100%);
+  border-bottom: 1px solid #ddd;
+  padding: 1.2rem 0; /* reduced from 2rem */
+  z-index: 1030;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Logo */
+.navbar-brand img {
+  max-height: 90px; /* reduced from 110px */
+  width: auto;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  margin-top: -10px;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Donate Button (Enhanced) */
+.donate-btn {
+  font-weight: 700;
+  color: #fff !important;
+  background: linear-gradient(135deg, #ff6b6b, #f94d6a);
+  border-radius: 50px;
+  padding: 10px 24px;
+  font-size: 1.05rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(249, 77, 106, 0.4);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.donate-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, transparent 10.01%);
+  background-size: 10px 10px;
+  animation: pulseGlow 2s linear infinite;
+  z-index: 0;
+}
+
+.donate-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.donate-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(249, 77, 106, 0.5);
+}
+
+/* Pulse animation */
+@keyframes pulseGlow {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(10px, 10px);
+  }
+}
+/* Nav Links with Animated Underline */
+.navbar-nav .nav-link {
+  font-weight: 600;
+  color: #123974 !important;
+  padding: 1.2rem 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+  font-size: 1.05rem;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  display: block;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 0;
+  height: 3px;
+  background-color: #007bff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 80%;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #007bff !important;
+}
+
+
+
+/* ===== Responsive (Mobile) ===== */
+@media (max-width: 991.98px) {
+  .navbar-custom {
+    padding: 1rem 0;
+  }
+
+  .navbar-brand img {
+    max-height: 80px;
+    margin-top: -10px;
+  }
+
+  .navbar-collapse {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .donate-btn {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Team Card Hover Animation */
+.team-member-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  background-color: #f0f9ff;
+  will-change: transform;
+}
+
+.team-member-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Initiative Card */
+.initiative-card {
+  background-color: #e6f3ff;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  overflow: hidden;
+}
+
+.initiative-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.initiative-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 auto 15px;
+  transition: transform 0.3s ease;
+}
+
+.initiative-card:hover .initiative-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.initiative-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+.initiative-card .card-text {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.initiative-card .btn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 6px 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.initiative-card .btn:hover {
+  transform: translateY(-2px);
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* Major Activities */
+.card-activity {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.card-activity:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card-activity img,
+.card-activity .activity-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.card-activity h5 {
+  color: #0d6efd;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.card-activity p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Final Program Cards */
+.program-card {
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.program-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 4px #e6f3ff;
+}
+
+.program-card h4 {
+  font-weight: 700;
+  margin-top: 1.5rem;
+  color: #333;
+}
+
+.program-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* === Knowledge Cards === */
+.animated-title span {
+  font-size: 2.8rem;
+}
+
+.sub-heading {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #123974;
+  margin-bottom: 1rem;
+}
+
+.course-card {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-card .card-img-top {
+  transition: transform 0.4s ease;
+}
+
+.course-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-footer a {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* === Featured Members === */
+.featured-member-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.featured-member-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.featured-member-img {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.featured-member-card:hover .featured-member-img {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* === Job Section Specific Collapse Animation === */
+.job-collapse:not(.show) {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s ease;
+}
+
+.job-collapse.show {
+  animation: fadeSlideIn 0.5s ease both;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Job Section Styles */
+/* Job Card Styling */
+.job-card {
+  background-color: #e6f3ff; /* Light blue, no white */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Job Title Button */
+.job-title-toggle {
+  background-color: transparent;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #123974;
+  border: none;
+  outline: none;
+}
+
+.job-title-toggle .dropdown-icon {
+  transition: transform 0.3s ease;
+}
+
+.job-title-toggle.collapsed .dropdown-icon i {
+  transform: rotate(0deg);
+}
+
+.job-title-toggle[aria-expanded="true"] .dropdown-icon i {
+  transform: rotate(180deg);
+}
+
+@keyframes slideFadeIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Inner content spacing */
+#job0, #job1, #job2, #job3, #job4, #job5, #job6, #job7, #job8, #job9, #job10 {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/*contact*/
+.connect-section {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.social-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 20px 10px;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 110px;
+}
+
+.social-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.icon-bg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+}
+
+/* Social platform colors */
+.facebook .icon-bg { background: #1877f2; }
+.twitter .icon-bg { background: #1da1f2; }
+.youtube .icon-bg { background: #ff0000; }
+.whatsapp .icon-bg { background: #25d366; }
+.instagram .icon-bg {
+  background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285AEB);
+}
+
+.social-card span {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .icon-bg {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .social-card span {
+    font-size: 13px;
+  }
+}
