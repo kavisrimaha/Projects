@@ -513,3 +513,8 @@ h1, h2, h3 {
     font-size: 13px;
   }
 }
+
+/*NEWS*/
+.news-card {
+  margin-bottom: 60px;
+}
