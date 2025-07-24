@@ -1,8 +1,8 @@
 <?php include 'header.php'; ?>
 <?php include 'db.php'; // your PDO connection ?>
 
-<div class="container py-5 text-center" data-aos="fade-down">
-  <div class="row justify-content-center">
+<div class="container py-5 text-center" data-aos="fade-down" >
+  <div class="row justify-content-center" style=" padding-top: 50px;">
     <div class="col-lg-10">
       <h1 class="display-5 fw-bold text-primary mb-4">
         "Empowering Change, Inspiring Hope: Uniting Hearts for a Better Tomorrow"
@@ -20,35 +20,31 @@ $stmt->execute();
 $newsItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<?php foreach ($newsItems as $i => $event): ?>
-  <div class="container mb-5">
-    <div class="news-card shadow rounded p-4 bg-white" data-aos="<?php echo $i % 2 === 0 ? 'fade-right' : 'fade-left'; ?>">
-      <div class="row align-items-center">
-        <div class="col-md-6 <?php echo $i % 2 === 0 ? '' : 'order-md-2'; ?>">
+<div class="container mb-5">
+  <div class="row g-4">
+    <?php foreach ($newsItems as $i => $event): ?>
+      <div class="col-md-6 col-lg-4 d-flex">
+        <div class="news-card shadow rounded p-4 bg-white w-100" data-aos="<?php echo $i % 2 === 0 ? 'fade-right' : 'fade-left'; ?>">
           <a href="<?php echo $event['image_url']; ?>" target="_blank">
-            <img src="<?php echo $event['image_url']; ?>" class="img-fluid news-image rounded" alt="<?php echo htmlspecialchars($event['title']); ?>">
+            <img src="<?php echo $event['image_url']; ?>" class="img-fluid news-image rounded mb-3" alt="<?php echo htmlspecialchars($event['title']); ?>">
           </a>
-        </div>
-        <div class="col-md-6 <?php echo $i % 2 === 0 ? '' : 'order-md-1'; ?>">
-          <h4 class="fw-bold mt-4 mt-md-0"><?php echo htmlspecialchars($event['title']); ?></h4>
-          <p class="text-muted mt-3"><?php echo htmlspecialchars($event['description']); ?></p>
+          <h4 class="fw-bold"><?php echo htmlspecialchars($event['title']); ?></h4>
+          <p class="text-muted mt-2"><?php echo htmlspecialchars($event['description']); ?></p>
 
           <?php if (!empty($event['read_more'])): ?>
             <a href="<?php echo $event['read_more']; ?>" class="btn btn-primary btn-sm me-2 mt-2" target="_blank">Read More</a>
           <?php endif; ?>
-
           <?php if (!empty($event['read_more_1'])): ?>
             <a href="<?php echo $event['read_more_1']; ?>" class="btn btn-outline-primary btn-sm me-2 mt-2" target="_blank">Tamiljanam</a>
           <?php endif; ?>
-
           <?php if (!empty($event['read_more_2'])): ?>
             <a href="<?php echo $event['read_more_2']; ?>" class="btn btn-outline-secondary btn-sm mt-2" target="_blank">Tamil365</a>
           <?php endif; ?>
         </div>
       </div>
-    </div>
+    <?php endforeach; ?>
   </div>
-<?php endforeach; ?>
+</div>
 
 <!-- AOS CSS -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">

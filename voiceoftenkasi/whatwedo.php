@@ -1,124 +1,111 @@
 <?php include 'header.php'; ?>
-<!-- Section Heading -->
-<div class="container my-5">
-  <div class="text-center">
-    <h1 class="display-5 fw-bold">Major Activities</h1>
-    <hr class="mx-auto" style="width: 100px; height: 3px; background-color: #000; opacity: 1;">
+
+<section class="py-2" style="background-color: #ffffffff; ">
+  <div class="container my-5" data-aos="fade-up" >
+    <div class="text-center" style=" padding-top: 50px;">
+      <h1 class="display-5 fw-bold">Major Activities</h1>
+      <hr class="mx-auto" style="width: 100px; height: 3px; background-color: #000; opacity: 1;">
+    </div>
   </div>
-</div>
 
-<!-- First Row: 4 Key Pillars -->
-<div class="container py-5">
-  <div class="row g-4 text-center">
+  <div class="container py-2" style="margin-top:10px;">
+   <!-- Container with position-relative for button placement -->
+<div class="position-relative my-2">
 
-    <?php
-    $activities = [
-      [
-        'title' => 'Startup Initiatives',
-        'img' => 'https://voiceoftenkasi.org/wp-content/uploads/2023/11/startup.png',
-        'desc' => [
-          'Fostering a culture of innovation and entrepreneurship.',
-          'Providing a platform for startups to thrive in a supportive ecosystem.'
-        ]
-      ],
-      [
-        'title' => 'Jobs4Life',
-        'img' => 'https://voiceoftenkasi.org/wp-content/uploads/2023/11/routine.png',
-        'desc' => [
-          'Bridging the gap between job seekers and opportunities.',
-          'Creating sustainable employment opportunities for the local community.'
-        ]
-      ],
-      [
-        'title' => 'Tech Education',
-        'img' => 'https://voiceoftenkasi.org/wp-content/uploads/2023/11/graduation-cap.png',
-        'desc' => [
-          'Empowering the youth through cutting-edge technology education.',
-          'Preparing the workforce for the challenges and opportunities of the digital age.'
-        ]
-      ],
-      [
-        'title' => 'Empowering Farmers',
-        'img' => 'https://voiceoftenkasi.org/wp-content/uploads/2023/11/planting.png',
-        'desc' => [
-          'Implementing sustainable agricultural practices.',
-          'Enhancing the livelihoods of farmers through technology-driven solutions.'
-        ]
-      ]
-    ];
+  <!-- Scroll Left Button -->
+  <button id="scrollLeft"
+    class="btn btn-primary rounded-circle position-absolute top-50 translate-middle-y start-0 z-3"
+    style="width: 40px; height: 40px; margin-left: -25px;">
+    <i class="bi bi-chevron-left text-white"></i>
+  </button>
 
-    foreach ($activities as $item): ?>
-        <div class="col-md-6 col-lg-3">
-          <div class="card card-activity h-100">
-            <div class="card-body">
-              <img src="<?= $item['img']; ?>" alt="<?= $item['title']; ?>" class="img-fluid mb-3 activity-icon">
-              <h5 class="fw-bold"><?= $item['title']; ?></h5>
-              <?php foreach ($item['desc'] as $point): ?>
-                <p class="mb-1 text-muted small"><?= $point; ?></p>
-              <?php endforeach; ?>
+  <!-- Scroll Right Button -->
+  <button id="scrollRight"
+    class="btn btn-primary rounded-circle position-absolute top-50 translate-middle-y end-0 z-3"
+    style="width: 40px; height: 40px; margin-right: -25px;">
+    <i class="bi bi-chevron-right text-white"></i>
+  </button>
+
+  <!-- Scrollable Cards Wrapper -->
+  <div id="scrollableActivities" class="d-flex overflow-auto flex-nowrap gap-3 pb-3 px-2">
+   
+          <?php
+          $allActivities = [
+            [
+              'title' => 'Startup Initiatives',
+              'img' => './assets/images/Startup Initiatives.jpg',
+              'desc' => 'Fostering a culture of innovation and entrepreneurship. Supporting startups with resources to thrive.'
+            ],
+            [
+              'title' => 'Jobs4Life',
+              'img' => './assets/images/Job4Life.jpg',
+              'desc' => 'Connecting job seekers to employment opportunities and creating sustainable livelihoods locally.'
+            ],
+            [
+              'title' => 'Tech Education',
+              'img' => 'assets/images/Tech Education.png',
+              'desc' => 'Empowering youth with digital skills to succeed in the modern workforce and global environment.'
+            ],
+            [
+              'title' => 'Empowering Farmers',
+              'img' => 'assets/images/Empowering Farmers.jpg',
+              'desc' => 'Promoting sustainable farming methods to enhance productivity and rural prosperity.'
+            ],
+            [
+              'title' => 'Free Education Initiatives',
+              'img' => 'assets/images/Free Education.jpg',
+              'desc' => 'We provide free spoken English and other educational programs to bridge communication gaps and unlock opportunities.'
+            ],
+            [
+              'title' => 'Career Building for Graduates',
+              'img' => 'assets/images/Career Building.jpg',
+              'desc' => 'Empowering graduates with career guidance, skill development, and mentorship for a successful professional path.'
+            ],
+            [
+              'title' => 'Health is Happiness',
+              'img' => 'assets/images/Health is Happiness.jpg',
+              'desc' => 'Creating awareness and organizing camps to promote physical and mental well-being in the community.'
+            ],
+            [
+              'title' => 'What Next After High School',
+              'img' => 'assets/images/What next.jpg',
+              'desc' => 'Helping students explore post-school career and education options with the right guidance and support.'
+            ]
+          ];
+
+          foreach ($allActivities as $item): ?>
+            <div class="card flex-shrink-0" style="width: 280px; min-height: 350px; background: #fff;">
+              <div class="card-body d-flex flex-column align-items-center justify-content-start pt-4 pb-2">
+                <!-- Logo/Image -->
+                <div class="d-flex justify-content-center mt-3 mb-2">
+                  <div class="rounded-circle" style="width: 110px; height: 110px; background: linear-gradient(135deg, #e6f3ff 60%, #b0d4f1 100%); border: 3px solid #fff; display: flex; align-items: center; justify-content: center;">
+                    <img src="<?= $item['img']; ?>" alt="<?= $item['title']; ?>" style="width: 75px; height: 75px; object-fit: contain;" class="rounded-circle bg-white">
+                  </div>
+                </div>
+                <!-- Content -->
+                <div class="mt-4 text-center">
+                  <h5 class="fw-bold text-primary mb-2"><?= $item['title']; ?></h5>
+                  <p class="text-muted small px-2"><?= $item['desc']; ?></p>
+                </div>
+              </div>
             </div>
-          </div>
+          <?php endforeach; ?>
         </div>
-      <?php endforeach; ?>
-
-
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- Second Row: Detailed Initiatives -->
-<div class="container py-5">
-  <div class="row g-4 text-center">
-
-    <?php
-    $detailedActivities = [
-      [
-        'title' => 'Free Education Initiatives',
-        'img' => 'https://voiceoftenkasi.org/wp-content/uploads/2023/11/higher-education.png',
-        'desc' => 'We believe education is the key to unlocking one’s potential. Our foundation actively engages in providing free education activities, with a special focus on spoken English. We understand the importance of language skills in today’s globalized world, and our programs aim to bridge the gap, empowering individuals to communicate effectively.'
-      ],
-      [
-        'title' => 'Career Building for Graduates',
-        'img' => 'https://voiceoftenkasi.org/wp-content/uploads/2023/11/success.png',
-        'desc' => 'Recognizing the challenges that graduates face as they enter the workforce, Voice of Tenkasi Foundation is dedicated to facilitating their career growth. We provide guidance, skill development programs, and networking opportunities to empower graduates to navigate the professional landscape successfully.'
-      ],
-      [
-        'title' => 'Health is Happiness',
-        'img' => 'https://voiceoftenkasi.org/wp-content/uploads/2023/11/dumbbell.png',
-        'desc' => 'We strongly believe that health is the foundation of a happy and fulfilling life. Our foundation is actively involved in promoting health and well-being within the community.'
-      ],
-      [
-        'title' => 'What Next After High School',
-        'img' => 'https://voiceoftenkasi.org/wp-content/uploads/2023/11/question-mark.png',
-        'desc' => 'Guiding and mentoring students on the various paths available after high school is a crucial aspect of our educational initiatives. We provide insights and resources to help them make informed decisions about their future.'
-      ]
-    ];
-
-    foreach ($detailedActivities as $activity): ?>
-        <div class="col-md-6 col-lg-3">
-          <div class="card card-activity h-100">
-            <div class="card-body">
-              <img src="<?= $activity['img']; ?>" alt="<?= $activity['title']; ?>" class="img-fluid rounded-circle mb-3 activity-icon">
-              <h5 class="fw-bold"><?= $activity['title']; ?></h5>
-              <p class="text-muted small"><?= $activity['desc']; ?></p>
-            </div>
-          </div>
-        </div>
-      <?php endforeach; ?>
-
-  </div>
-</div>
-
-
-<!-- Bootstrap YouTube Video Section -->
-<section class="py-5" style="background-color: #E6F3FF;">
+<!-- YouTube Section -->
+<section class="py-2 bg-white">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-lg-10">
+      <div class="col-lg-7 mx-auto">
         <div class="ratio ratio-16x9 shadow rounded" data-aos="fade-up">
           <iframe
             src="https://www.youtube.com/embed/68YzVnCN2W8?autoplay=1&loop=1&playlist=68YzVnCN2W8&controls=1&rel=0&playsinline=1"
             title="What We Do | Voice of Tenkasi Foundation"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
             loading="lazy"
             referrerpolicy="strict-origin-when-cross-origin"
@@ -127,57 +114,46 @@
       </div>
     </div>
   </div>
+</section>
 
- <div class="container py-5">
+<!-- Final Row: Education | Healthcare | Sustainability -->
+<div class="container py-5">
   <div class="row">
+    <?php
+    $finalPrograms = [
+      [
+        'title' => 'Education Programs',
+        'img' => './assets/images/education.png',
+        'desc' => 'Enabling access to quality education through scholarships, school development projects, and skill-building.',
+        'delay' => 100
+      ],
+      [
+        'title' => 'Healthcare Initiatives',
+        'img' => './assets/images/health1.jpg',
+        'desc' => 'Supporting healthcare facilities, organizing medical camps, and creating awareness about preventive health.',
+        'delay' => 200
+      ],
+      [
+        'title' => 'Sustainable Development',
+        'img' => './assets/images/Sustainable Development.jpg',
+        'desc' => 'Implementing clean energy, waste management, and environmental conservation initiatives in Tenkasi.',
+        'delay' => 300
+      ]
+    ];
 
-    <!-- Education Programs -->
-    <div class="col-md-4 mb-4">
-      <div class="program-card h-100">
-        <div class="mb-3">
-          <img src="./assets/images/education.png" alt="Education Icon">
+    foreach ($finalPrograms as $program): ?>
+      <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="<?= $program['delay']; ?>">
+        <div class="program-card h-100">
+          <div class="mb-3">
+            <img src="<?= $program['img']; ?>" alt="<?= $program['title']; ?>" class="img-fluid">
+          </div>
+          <h4 class="fw-bold"><?= $program['title']; ?></h4>
+          <hr class="mx-auto my-3" style="width: 60px; height: 2px; background-color: #198754; opacity: 1;">
+          <p><?= $program['desc']; ?></p>
         </div>
-        <h4 class="fw-bold">Education Programs</h4>
-        <hr class="mx-auto my-3" style="width: 60px; height: 2px; background-color: #0d6efd; opacity: 1;">
-        <p>
-          Enabling access to quality education through scholarships, school development projects, and skill-building.
-        </p>
       </div>
-    </div>
-
-    <!-- Healthcare Initiatives -->
-    <div class="col-md-4 mb-4">
-      <div class="program-card h-100">
-        <div class="mb-3">
-          <img src="./assets/images/health1.jpg" alt="Healthcare Icon">
-        </div>
-        <h4 class="fw-bold">Healthcare Initiatives</h4>
-        <hr class="mx-auto my-3" style="width: 60px; height: 2px; background-color: #198754; opacity: 1;">
-        <p>
-          Supporting healthcare facilities, organizing medical camps, and creating awareness about preventive health.
-        </p>
-      </div>
-    </div>
-
-    <!-- Sustainable Development -->
-    <div class="col-md-4 mb-4">
-      <div class="program-card h-100">
-        <div class="mb-3">
-          <img src="./assets/images/Sustainable Development.jpg" alt="Sustainability Icon">
-        </div>
-        <h4 class="fw-bold">Sustainable Development</h4>
-        <hr class="mx-auto my-3" style="width: 60px; height: 2px; background-color: #198754; opacity: 1;">
-        <p>
-          Implementing clean energy, waste management, and environmental conservation initiatives in Tenkasi.
-        </p>
-      </div>
-    </div>
-
+    <?php endforeach; ?>
   </div>
 </div>
 
-</section>
- <hr class="mx-auto my-3" style="width: 0px; height: 100px; background-color:rgba(25, 135, 84, 0); opacity: 1;">
-       
 <?php include 'footer.php'; ?>
-

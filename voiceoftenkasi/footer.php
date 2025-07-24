@@ -3,10 +3,15 @@
   <div class="container">
     <div class="row">
 
-      <!-- Logo & Social -->
+      <!-- Logo & Statement & Social -->
       <div class="col-md-4 mb-4 text-center text-md-start">
-        <img src="./assets/images/logo.webp" alt="Voice of Tenkasi Logo" width="160" class="img-fluid mb-3">
-        <div class="d-flex justify-content-center justify-content-md-start gap-3 social-icons">
+        <img src="./assets/images/logo.webp" alt="Voice of Tenkasi Logo" width="160" class="img-fluid mb-1">
+
+        
+       
+
+        <!-- Social Icons -->
+        <div class="d-flex justify-content-center justify-content-md-start gap-3 social-icons mt-3">
           <a href="#" class="text-dark fs-5"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="text-dark fs-5"><i class="fab fa-instagram"></i></a>
           <a href="#" class="text-dark fs-5"><i class="fab fa-x-twitter"></i></a>
@@ -19,14 +24,10 @@
       <div class="col-md-4 mb-4">
         <h5 class="fw-bold mb-3">Quick Links</h5>
         <ul class="list-unstyled">
-          <li class="mb-2"><i class="fas fa-angle-right me-2 text-primary"></i><a href="#" class="text-dark text-decoration-none">Home</a></li>
-          <li class="mb-2"><i class="fas fa-angle-right me-2 text-primary"></i><a href="#" class="text-dark text-decoration-none">About Us</a></li>
-          <li class="mb-2"><i class="fas fa-angle-right me-2 text-primary"></i><a href="#" class="text-dark text-decoration-none">What We Do</a></li>
-          <li class="mb-2"><i class="fas fa-angle-right me-2 text-primary"></i><a href="#" class="text-dark text-decoration-none">Events</a></li>
-          <li class="mb-2"><i class="fas fa-angle-right me-2 text-primary"></i><a href="#" class="text-dark text-decoration-none">Get Involved</a></li>
-          <li class="mb-2"><i class="fas fa-angle-right me-2 text-primary"></i><a href="#" class="text-dark text-decoration-none">News and Press</a></li>
-          <li class="mb-2"><i class="fas fa-angle-right me-2 text-primary"></i><a href="#" class="text-dark text-decoration-none">Contact</a></li>
-          <li class="mb-2"><i class="fas fa-angle-right me-2 text-primary"></i><a href="#" class="text-dark text-decoration-none">Privacy Policy</a></li>
+          <li class="mb-2"><i class="fas fa-angle-right me-2 text-primary"></i><a href="join.php" class="text-dark text-decoration-none">Get Involved</a></li>
+          <li class="mb-2"><i class="fas fa-angle-right me-2 text-primary"></i><a href="news.php" class="text-dark text-decoration-none">News and Press</a></li>
+          <li class="mb-2"><i class="fas fa-angle-right me-2 text-primary"></i><a href="contact.php" class="text-dark text-decoration-none">Contact</a></li>
+          <li class="mb-2"><i class="fas fa-angle-right me-2 text-primary"></i><a href="privacy-policy.php" class="text-dark text-decoration-none">Privacy Policy</a></li>
         </ul>
       </div>
 
@@ -55,12 +56,12 @@
   </div>
 
   <!-- AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
-</script>
-
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+  
 </footer>

@@ -50,3 +50,32 @@
     offset: 100,          // Trigger offset from viewport
     easing: 'ease-in-out' // Easing style
   });
+
+  //WHAT WE DO SCROLL
+  
+  document.addEventListener("DOMContentLoaded", function () {
+  const scrollContainer = document.getElementById("scrollableActivities");
+  const scrollLeft = document.getElementById("scrollLeft");
+  const scrollRight = document.getElementById("scrollRight");
+
+  if (scrollContainer && scrollLeft && scrollRight) {
+    scrollLeft.addEventListener("click", () => {
+      scrollContainer.scrollBy({
+        left: -300,
+        behavior: "smooth"
+      });
+    });
+
+    scrollRight.addEventListener("click", () => {
+      scrollContainer.scrollBy({
+        left: 300,
+        behavior: "smooth"
+      });
+    });
+  } else {
+    console.error("Scroll elements not found. Check IDs and JS loading.");
+  }
+});
+
+
+  

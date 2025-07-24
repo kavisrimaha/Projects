@@ -6,7 +6,7 @@ $donate_button_text = "💖 Donate / Support Us";
 $donate_link = "https://razorpay.com/payment-button/pl_OgOcZstdd6PrOj/view/?utm_source=payment_button&utm_medium=button&utm_campaign=payment_button";
 ?>
 
-<section style="position: relative; padding: 80px 0; overflow: hidden; height: 500px; color: white;">
+<section style="position: relative; padding: 80px 0; overflow: hidden; height: 500px; color: white; padding-top: 150px;">
   
   <!-- Background Image Layer -->
   <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;

@@ -9,15 +9,15 @@ $patron = [
     'title' => 'CEO, @Zoho',
     'description' => 'Sridhar Vembu, the visionary founder and CEO of Zoho Corporation, has transformed rural India into tech hubs, emphasizing the future of offices in villages. From a middle-class background, he earned a Ph.D. from Princeton before founding Zoho, a highly successful bootstrapped company, with a reported revenue of over $1 billion. Vembu\'s commitment extends beyond business, with initiatives like Zoho Schools and Zoho University, aiming to train youth in underprivileged areas and addressing India\'s unemployment crisis. Awarded the Padma Shri, he exemplifies a grounded, nationalist leader, urging entrepreneurs to build products for the world and to practice simple living.',
     'quote' => 'India needs a corporate mandate on R&D',
-    'image' => 'https://voiceoftenkasi.org/wp-content/uploads/elementor/thumbs/India-needs-corporate-mandate-on-RD-Zoho-CEO-Sridhar-Vembu-1-qnkjqwchrpyr8c67q08mburfkix772levz7dvj8lzs.jpg'
-];
+    'image' =>'./assets/images/Sridhar Vembu.jpg'
+  ];
 
 // Founder information
 $founder = [
     'name' => 'Ananthan Ayyasamy',
     'title' => 'Founder @ Voice of Tenkasi Foundation',
     'description' => 'Ananthan Ayyasamy, a semiconductor expert turned rural advocate, left a successful career at Intel in the US to revitalize Tenkasi. His dedication stems from personal struggles, inspiring his focus on education, tech, and entrepreneurship. Through \'Startup Tenkasi\' and infrastructural dreams, he aims for economic growth and tech innovation. Holding degrees from NIT Trichy and ASU, with patents in semiconductor design, he\'s now a BJP leader and a catalyst for rural education and community development. Ananthan\'s journey, from farm laborer to changemaker, fuels hope and progress in Tenkasi, driving Voice of Tenkasi Foundation\'s impactful initiatives for community welfare and growth.',
-    'image'=> 'https://voiceoftenkasi.org/wp-content/uploads/elementor/thumbs/272A9556a-scaled-qnkjr9i8fegrqvn3l5xearfvvx4c6u1nlsc6lep3ko.jpg',
+    'image'=> './assets/images/Ananthan Ayyasamy.jpg',
     'social_links' => [
         'twitter' => 'https://twitter.com/TenkasiAnanthan',
         'linkedin' => 'https://www.linkedin.com/in/ananthan/',
@@ -30,7 +30,7 @@ $team_members = [
     [
         'name' => 'Karunya Gunavathy',
         'role' => 'Chief of Staff',
-        'image' => 'https://voiceoftenkasi.org/wp-content/uploads/2024/01/karunya-e1706264408550-300x272.jpg',
+        'image' => './assets/images/Karunya Gunavathy.jpg',
         'description' => 'Karunya Gunavathy serves as the Chief of Staff at the Voice of Tenkasi Foundation (VOTF) and is also the Founder of Raphael Creatives (RC), a presentation design venture. With an MBA from the University of Madras and a background in graphic design, she combines aesthetics and functionality to create visually stunning presentations. Karunya is passionate about transforming complex ideas into impactful narratives. She values collaboration, understanding clients\' needs, and aims to inspire and persuade through her work.',
         'featured' => true
     ],
@@ -61,10 +61,10 @@ $team_members = [
 include 'header.php'; 
 ?>
 <!-- Main Content -->
-<div class="container mt-4 pt-5">
+<div class="container mt-5 pt-5" >
 
   <!-- Patron -->
-  <section class="patron-section py-5" data-aos="fade-up">
+  <section class="patron-section" data-aos="fade-up"style=" padding-top: 50px; ">
     <div class="row align-items-center">
       <div class="col-md-6 mb-4">
         <h4 class="text-uppercase text-primary">-Patron-</h4>
@@ -78,7 +78,7 @@ include 'header.php';
         </div>
       </div>
       <div class="col-md-6 mb-4 text-center">
-        <div class="rounded d-flex align-items-center justify-content-center position-relative" style="background-color:#E6F3FF; height: 450px; width: 100%; min-width: 400px;">
+        <div class="rounded d-flex align-items-center justify-content-center " style="background-color:#E6F3FF; height: 450px; width: 100%; min-width: 400px;">
           <img src="<?php echo $patron['image']; ?>" alt="<?php echo $patron['quote']; ?>" class="img-fluid rounded shadow-sm mb-3 position-relative z-2" style="max-width: 400px;">
         </div>
       </div>
@@ -141,20 +141,29 @@ include 'header.php';
      data-aos-duration="1000"
      data-aos-easing="ease-out-cubic">
 
-      <div class="col-lg-12">
-        <div class="featured-member-card p-4 rounded-4 shadow-lg text-center" style="background-color:#fff; border: 2px solid rgba(0, 0, 0, 0.1);">
-          <div class="mb-4">
-            <img src="<?php echo $member['image']; ?>" alt="<?php echo $member['name']; ?>" class="featured-member-img img-fluid shadow" style="width: 300px; height: 300px; object-fit: cover; border-radius: 16px; border: 2px solid #b0d4f1;">
-          </div>
-          <div>
-            <span class="px-3 py-2 rounded d-inline-block fw-semibold bg-white text-primary shadow-sm">Chief of Staff</span>
-            <h4 class="fw-semibold text-primary mt-3"><?php echo $member['name']; ?></h4>
-            <p class="text-muted fst-italic mb-3">“Transforming ideas into impactful visual narratives.”</p>
-            <p class="text-dark lh-base"><?php echo $member['description']; ?></p>
-          </div>
+  <div class="col-lg-12">
+    <div class="featured-member-card p-4 rounded-4 shadow-lg text-center d-flex flex-column align-items-center justify-content-center" style="background-color:#fff; border: 2px solid rgba(0, 0, 0, 0.1);">
+      
+      <div class="d-flex justify-content-center align-items-center mb-4">
+        <div class="glow-rotate-wrapper">
+          <div class="rotating-glow-single"></div>
+          <img src="<?php echo $member['image']; ?>" alt="<?php echo $member['name']; ?>" class="img-fluid shadow"
+               style="width: 300px; height: 300px; object-fit: cover; border-radius: 16px; position: relative; z-index: 2; border: 2px solid #b0d4f1;">
         </div>
       </div>
+
+      <div class="text-center">
+        <h3 class="fw-semibold text-primary mt-3"><?php echo $member['name']; ?></h3>
+        <span class="px-3 py-2 rounded d-inline-block fw-semibold bg-white text-primary shadow-sm">Chief of Staff</span>
+        
+        <p class="text-muted fst-italic mb-3">“Transforming ideas into impactful visual narratives.”</p>
+        <p class="text-dark lh-base"><?php echo $member['description']; ?></p>
+      </div>
+      
     </div>
+  </div>
+</div>
+
   <?php endif; ?>
 <?php endforeach; ?>
 

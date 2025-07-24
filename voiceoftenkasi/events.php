@@ -91,7 +91,7 @@ $past_events = $past_stmt->fetchAll(PDO::FETCH_ASSOC);
       </div>
 
       <!-- Optional Load More -->
-      <button class="btn btn-primary mt-4" id="loadMore">Load More</button>
+      
       <hr class="mx-auto my-3" style="width: 0px; height: 50px; background-color:rgba(25, 135, 84, 0); opacity: 1;">
   
     </div>
